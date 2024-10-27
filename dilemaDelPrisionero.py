@@ -1,22 +1,28 @@
 confesar = [True, False]
 
-delito_menor = 2
-condena_acortada = 5
-condena_completa = 10
 
 def confiesa(juan, carlos):
+    delito_menor = 2
+    condena_acortada = 5
+    condena_completa = 10
+
     if juan and carlos:
-        return (condena_acortada,condena_acortada)
-        
+        print(f"Si ambos confiesan: juan = {
+              condena_acortada}, carlos = {condena_acortada}")
+
     if juan and not carlos:
-        return (0,condena_completa)
+        print(f"Si solo juan confiesa: juan = {
+              0}, carlos = {condena_completa}")
 
     if not juan and carlos:
-        return ( condena_completa, 0)
+        print(f"Si solo carlos confiesa: juan = {
+              condena_completa}, carlos = {0}")
 
     if not juan and not carlos:
-        return (delito_menor,delito_menor)
+        print(f"Si ninguno confiesa: juan = {
+              delito_menor}, carlos = {delito_menor}")
 
 
-for i in range (4):
-    corrida = confiesa()
+for i in range(2):
+    for j in range(2):
+        confiesa(confesar[i], confesar[j])
